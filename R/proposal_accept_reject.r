@@ -30,7 +30,7 @@ proposal_accept_reject <- function(summary=summary, proposal_summary=proposal_su
       p_accept_worse <- exp( ( -numerator ) / t  )
 
       #cat(p_accept_worse, "\n")
-      if ( runif(1) < p_accept_worse ) {
+      if ( !is.nan(p_accept_worse) & runif(1) < p_accept_worse ) {
          accept=TRUE
       }
    }
